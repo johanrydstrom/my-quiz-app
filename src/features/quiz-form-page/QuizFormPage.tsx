@@ -3,9 +3,17 @@ import { ChangeEvent } from "react";
 import { createQuiz, Question } from '../../common/requests/quizRequest';
 import { Category, fetchCategories } from '../../common/requests/categoriesRequest';
 import { QuizForm } from './QuizForm';
-export const QuizFormPage = () => {
 
+interface Props {
+   questions: Question[]
+   onSubmit: (
+      amount: number,
+      difficulty: string | undefined,
+      category: Category | undefined
+   ) => void;
+}
 
+export const QuizFormPage = ({ onSubmit }: Props) => {
    const [categories, setCategories] = useState<Category[]>([]);
    const [isLoading, setIsLoading] = useState(false);
 
@@ -22,7 +30,7 @@ export const QuizFormPage = () => {
          <h1>Quiz Form</h1>
 
          {isLoading}
-         <QuizForm categories={categories} />
+         <QuizForm categories={categories} submit={onSubmit} />
       </>
    );
 }

@@ -1,13 +1,17 @@
 import styles from "./Input.module.css";
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props {
   label: string;
+  onInputChange: (value: number) => void;
 }
 
 export const Input = (props: Props) => {
   return (
     <label className="form-label">
       {props.label}
-      <input {...props} className={styles.input} />
+      <input
+        type="number"
+        className={styles.input}
+        onChange={(e) => props.onInputChange(Number(e.target.value))} />
     </label>
   );
 };

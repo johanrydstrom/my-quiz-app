@@ -60,7 +60,7 @@ const mapToQuestions = (responseJson: ApiQuizResponse): Question[] => {
 };
 
 export const createQuiz = async (
-  amount: string,
+  amount: number,
   difficulty: string | undefined,
   category: Category | undefined
 ) => {
