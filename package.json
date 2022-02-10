@@ -1,5 +1,6 @@
 {
   "name": "my-quiz-app",
+  "homepage": "https://johanrydstrom.github.io/my-quiz-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
