@@ -1,5 +1,5 @@
 import './App.css';
-import { QuizFormPage } from './components/QuizForm';
+import { QuizFormPage } from './features/quiz-form-page/QuizFormPage';
 
 export default function App() {
 
